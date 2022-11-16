@@ -1,0 +1,381 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    min-height: 100vh;
+    /* background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% ); */
+    background: #161623;
+    color: #fff;
+    overflow-X: hidden;
+}
+
+main {
+    margin: 5px;
+}
+main h1{
+    margin: 10px 0;
+}
+
+.calc h1 {
+    text-align: center;
+}
+.calc {
+    margin: 15vh auto;
+    width: 400px;
+    max-width: 90%;
+    font-size: 15px;
+    background: #00ce5d;
+    border: 1px solid rgba(119, 192, 151, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .3);
+}
+.calc form {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.calc form .form-control {
+    width: 100%;
+    height: 30px;
+    margin: 10px 0 18px 0;
+    border-radius: 5px;
+    border: 1px solid silver;
+    padding: 0 5px;
+}
+.calc form .btn {
+    margin-left: 50%;
+    transform: translate(-50%);
+    width: 100px;
+    height: 32px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgb(242, 25, 25);
+    transition: .3s;
+}
+.calc form .btn:hover {
+    opacity: .7;
+}
+
+/* This styling is for default navbar */
+header nav {
+    width: 100%;
+    min-height: 50px;
+    background: #313030;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+header nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0 10px;
+    float: right;
+}
+header nav ul li{
+    list-style: none;
+}
+header nav ul li a{
+    display: block;
+    color: #fff;
+    padding: 0 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 50px;
+}
+header nav ul li a:hover {
+    background-color: red;
+    border-radius: 5%;
+}
+
+/* This styling is for Animated Menu */
+header .navigation {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    height: 0;
+    width: 125px;
+    z-index: 10;
+    transition: .5s;
+}
+header .navigation:hover,
+header .navigation.active {
+    width: 250px;
+}
+
+header .navigation .toggle {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #ff216d;
+    padding-right: 30px;
+    transition: .5s;
+    border-radius: 8px;
+}
+header .navigation .toggle:hover {
+    padding: 5px 20px;
+}
+header .navigation .toggle.active {
+    left: 0;
+    width: 100%;
+    padding: 5px 20px;
+    border-radius: 8px 8px 0 0;
+    transition: .3s;
+}
+header .navigation .toggle::before {
+    content: 'Menu';
+    margin-right: 10px;
+    transition: .5s;
+}
+header .navigation .toggle.active::before {
+    content: 'Close';
+    transition: .5s;
+}
+
+header .navigation .toggle span {
+    position: relative;
+    width: 20px;
+    height: 50px;
+    transition: .5s;
+}
+header .navigation .toggle span::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff216d;
+    transition: .5s;
+}
+header .navigation .toggle span::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff216d;
+    transition: .5s;
+}
+header .navigation .toggle.active span::before {
+    transform: rotate(225deg);
+    top: 24px;
+}
+header .navigation .toggle.active span::after {
+    transform: rotate(135deg);
+    bottom: 24px;
+}
+
+header .navigation ul {
+    background-color: transparent;
+    height: 0;
+    transform: translateX(290px);
+}
+header .navigation ul li {
+    position: relative;
+    list-style: none;
+    transition: .5s;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(0px);
+    transition-delay: calc(.1s * var(--i));
+}
+header .navigation.active ul li {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-290px);
+}
+header .navigation ul li a {
+    position: relative;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    height: 50px;
+    background: #fff;
+    color: #333;
+    transition: .5s;
+}
+header .navigation ul li:last-child a {
+    border-radius: 0 0 8px 8px;
+}
+header .navigation ul li a:hover {
+    background: #f6f6f6;
+    color: #ff216d;
+    transition: .4s;
+}
+
+
+/* This styling is for cards */
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.container .card {
+    position: relative;
+    width: 250px;
+    height: 400px;
+    margin: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+    transition: transform 0.05s linear;
+    transform-style: preserve-3d;
+}
+.container .card:first-child,
+.container .card:last-child {
+    backdrop-filter: blur(10px);
+}
+
+.container .card .content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: .5;
+    transition: .5s;
+}
+.container .card:hover .content {
+    opacity: 1;
+    transform: translateY(-20px) translateZ(50px);
+}
+.container .card .content .imgbox{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid rgba(0, 0, 0, .25);
+    transform: translateZ(50px);
+}
+.container .card .content .imgbox img {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container .card .content .contentbox h3 {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 5px;
+    line-height: 1.1em;
+}
+.container .card .content .contentbox span {
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+.container .card .sci {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    transform: translateZ(50px);
+}
+.container .card .sci li {
+    list-style: none;
+    margin: 0 8px;
+    transform: translateY(40px);
+    transition: .5s;
+    transition-delay: calc(.1s * var(--i));
+    opacity: 0;
+}
+.container .card:hover .sci li {
+    transform: translateY(0);
+    opacity: 1;
+}
+.container .card .sci li a {
+    color: #fff;
+    font-size: 22px;
+}
+
+
+footer {
+    position: sticky;
+    top: 100%;
+    background: #015ec2;
+    min-height: 100px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: auto;
+}
+footer .social_icon,
+footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    flex-wrap: wrap;
+}
+footer .social_icon li,
+footer .menu li {
+    list-style: none;
+}
+footer .social_icon li a {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.4s;
+}
+footer .social_icon li a:hover {
+    transform: translateY(-10px);
+}
+footer .menu li a {
+    font-size: 1em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+}
+footer .menu li a:hover {
+    opacity: 1;
+}
+footer p {
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+.result,
+.contacts {
+    height: 70vh;
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

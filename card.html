@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cards</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+        <style>
+            body {
+                background-image: url(/static/images/gradient_circle.jpeg) !important;
+                background-size: cover;
+            }
+            section {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                flex-wrap: wrap !important;
+                min-height: 100vh !important;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="navigation">
+                <div class="toggle">
+                    <span></span>
+                </div>
+                <ul>
+                    <li style="--i:0;"><a href="/">Home</a></li>
+                    <li style="--i:1;"><a href="/cube.html">Cube</a></li>
+                    <li style="--i:2;"><a href="#">Services</a></li>
+                    <li style="--i:3;"><a href="#">Work</a></li>
+                    <li style="--i:4;"><a href="#">Team</a></li>
+                    <li style="--i:5;"><a href="/contacts.html">Contacts</a></li>
+                </ul>
+            </div>    
+        </header>
+        <section>
+            <div class="container">
+                <div class="card">
+                    <div class="content">
+                        <div class="imgbox"><img src="/static/images/captain.jpg"></div>
+                        <div class="contentbox">
+                            <h3>Captain America<br>
+                                <span>Captain</span>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <ul class="sci">
+                        <li style="--i:0;"><a href="#"><ion-icon class="fa fa-facebook" aria-hidden="true" name="logo-facebook"></ion-icon></a></li>
+                        <li style="--i:1;"><a href="#"><ion-icon class="fa fa-instagram" aria-hidden="true" name="logo-instagram"></ion-icon></a></li>
+                        <li style="--i:2;"><a href="#"><ion-icon class="fa fa-twitter" aria-hidden="true" name="logo-twitter"></ion-icon></a></li>
+                    </ul>
+                    
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="imgbox"><img src="/static/images/panther.jpg"></div>
+                        <div class="contentbox">
+                            <h3>Black Panther<br>
+                                <span>King</span>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <ul class="sci">
+                        <li style="--i:0;"><a href="#"><ion-icon class="fa fa-facebook" aria-hidden="true" name="logo-facebook"></ion-icon></a></li>
+                        <li style="--i:1;"><a href="#"><ion-icon class="fa fa-instagram" aria-hidden="true" name="logo-instagram"></ion-icon></a></li>
+                        <li style="--i:2;"><a href="#"><ion-icon class="fa fa-twitter" aria-hidden="true" name="logo-twitter"></ion-icon></a></li>
+                    </ul>
+
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="imgbox"><img src="/static/images/tony.jpg"></div>
+                        <div class="contentbox">
+                            <h3>Iron Man<br>
+                                <span>Genius Billioner</span>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <ul class="sci">
+                        <li style="--i:0;"><a href="#"><ion-icon class="fa fa-facebook" aria-hidden="true" name="logo-facebook"></ion-icon></a></li>
+                        <li style="--i:1;"><a href="#"><ion-icon class="fa fa-instagram" aria-hidden="true" name="logo-instagram"></ion-icon></a></li>
+                        <li style="--i:2;"><a href="#"><ion-icon class="fa fa-twitter" aria-hidden="true" name="logo-twitter"></ion-icon></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
+        <!--Icons-->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <!--Tilt-js-->
+        <script type="text/javascript" src="/static/js/vanilla-tilt.js"></script>
+        <script type="text/javascript">
+            VanillaTilt.init(document.querySelectorAll(".card"), {
+                max: 20,
+                speed: 400,
+                scale: 1.05
+            });
+        </script>
+        <!--Anumated Menu-->
+        <script type="text/javascript" src="/static/js/menu.js"></script>
+    </body>
+</html>

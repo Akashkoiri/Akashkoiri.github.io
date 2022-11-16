@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    background: rgb(229, 229, 229);
+}
+
+h3 {
+    text-align: center;
+    padding: 20px;
+}
+
+.register {
+    background-color: white;
+    width: 400px;
+    margin: 16vh auto;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register form {
+    width: 100%;
+    height: 100%;
+}
+
+.register form label {
+    font-size: 15px;
+}
+
+.register form #login {
+    font-size: .7em;
+    width: 100%;
+    height: 3em;
+    border-radius: 4px;
+    border: 1px solid silver;
+    padding: 0 5px;
+}
+
+.register form #submit {
+    margin-left: 50%;
+    transform: translate(-50%);
+    width: 120px;
+    height: 34px;
+    border: none;
+    outline: none;
+    background: #01cb0e;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+.register form #submit:hover {
+    color: black;
+    opacity: .7;
+}
